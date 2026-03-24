@@ -21,6 +21,7 @@
     --gray-200: #e5e7eb;
     --gray-400: #9ca3af;
     --gray-600: #4b5563;
+    --gray-700: #374151;
     --gray-800: #1f2937;
     --white: #ffffff;
   }
@@ -37,6 +38,13 @@
   .cover-meta-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #a78bfa; }
   .cover-meta-value { font-size: 15px; font-weight: 500; }
 
+  /* INTRO */
+  .intro { background: var(--white); border-bottom: 1px solid var(--gray-200); }
+  .intro-inner { max-width: 860px; margin: 0 auto; padding: 48px 40px; }
+  .intro-inner p { font-size: 16px; color: var(--gray-700); margin-bottom: 16px; line-height: 1.8; }
+  .intro-inner p:last-child { margin-bottom: 0; }
+  .intro-inner strong { color: var(--primary); }
+
   /* LAYOUT */
   .container { max-width: 860px; margin: 0 auto; padding: 60px 40px; }
   section { margin-bottom: 64px; }
@@ -52,14 +60,10 @@
   .questions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
   .question-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 22px 24px; position: relative; overflow: hidden; }
   .question-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent), var(--teal)); }
-  .question-card.b2b::before { background: linear-gradient(90deg, var(--teal), #0891b2); }
   .question-number { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-  .question-card.b2b .question-number { color: var(--teal); }
   .question-text { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 8px; line-height: 1.4; }
   .question-formula { font-size: 12px; color: var(--gray-400); font-family: 'Courier New', monospace; }
   .question-desc { font-size: 13px; color: var(--gray-600); margin-top: 8px; }
-  .b2b-card-full { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 22px 24px; position: relative; overflow: hidden; margin-top: 16px; }
-  .b2b-card-full::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--teal), #0891b2); }
 
   /* SECTION LABEL */
   .subsection-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-400); margin: 28px 0 12px; }
@@ -116,8 +120,6 @@
   .addon-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; flex-wrap: wrap; gap: 8px; }
   .addon-title { font-size: 18px; font-weight: 700; color: var(--primary); }
   .addon-badge { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: var(--accent-light); color: var(--accent); white-space: nowrap; }
-  .addon-price { font-size: 20px; font-weight: 800; color: var(--accent); margin: 8px 0 16px; }
-  .addon-price span { font-size: 13px; font-weight: 400; color: var(--gray-400); }
   .addon-problem { font-size: 13px; color: var(--gray-600); margin-bottom: 14px; font-style: italic; border-left: 3px solid var(--gray-200); padding-left: 12px; }
   .addon-section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-400); margin: 14px 0 8px; }
   .addon-card ul { margin: 0; padding-left: 18px; color: var(--gray-600); font-size: 14px; }
@@ -125,21 +127,12 @@
   .addon-result { background: var(--green-light); border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #065f46; margin-top: 14px; }
   .addon-result strong { color: #047857; }
 
-  /* PRICING */
-  .pricing-card { background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); border-radius: 16px; padding: 40px; color: var(--white); margin: 24px 0; }
-  .pricing-row { display: flex; justify-content: space-between; align-items: center; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 15px; }
-  .pricing-row:last-child { border-bottom: none; }
-  .pricing-row.total { font-size: 20px; font-weight: 800; padding-top: 20px; color: #a78bfa; }
-  .pricing-row.separator { border-top: 1px dashed rgba(255,255,255,0.2); margin-top: 8px; padding-top: 20px; }
-  .pricing-label { color: rgba(255,255,255,0.75); }
-  .pricing-optional { font-size: 11px; color: rgba(255,255,255,0.4); margin-left: 6px; }
-  .pricing-value { font-weight: 700; }
-
   /* NEXT STEPS */
-  .steps-list { list-style: none; padding: 0; margin: 20px 0; counter-reset: step; }
-  .steps-list li { counter-increment: step; display: flex; align-items: flex-start; gap: 16px; margin-bottom: 14px; }
+  .steps-list { list-style: none; padding: 0; margin: 20px 0; }
+  .steps-list li { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 14px; }
   .step-num { background: var(--accent); color: var(--white); font-size: 13px; font-weight: 700; min-width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .step-text { font-size: 14px; color: var(--gray-600); padding-top: 6px; }
+  .steps-intro { font-size: 14px; color: var(--gray-600); margin-bottom: 20px; font-style: italic; }
 
   /* TERMS */
   .terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
@@ -154,6 +147,7 @@
   @media (max-width: 640px) {
     .cover { padding: 48px 24px; }
     .cover-title { font-size: 26px; }
+    .intro-inner { padding: 32px 20px; }
     .container { padding: 40px 20px; }
     .questions-grid { grid-template-columns: 1fr; }
     .terms-grid { grid-template-columns: 1fr; }
@@ -189,6 +183,17 @@
   </div>
 </div>
 
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-inner">
+    <p>Hoje, o principal desafio não é gerar mais leads — é transformar o marketing em uma operação que realmente gera lucro.</p>
+    <p>Existe volume, existe faturamento, mas há perda de eficiência ao longo dos funis: conversão abaixo do potencial, decisões baseadas em feeling e capital alocado em iniciativas que não necessariamente retornam margem.</p>
+    <p><strong>O problema não é falta de marketing. É falta de clareza sobre o que realmente gera resultado.</strong></p>
+    <p>A Evolucionar.io entra para resolver exatamente isso: estruturar o marketing como um sistema previsível de crescimento, onde cada decisão é orientada por dados, cada teste tem um objetivo claro e cada investimento é direcionado para o que realmente gera resultado.</p>
+    <p>Não se trata de fazer mais. Trata-se de fazer o que funciona — com consistência, velocidade e clareza.</p>
+  </div>
+</div>
+
 <div class="container">
 
   <!-- 01. SITUAÇÃO ATUAL -->
@@ -218,28 +223,27 @@
         <div class="question-number">Questão 02</div>
         <div class="question-text">Qual é o verdadeiro valor de um aluno?</div>
         <div class="question-formula">Buyer Value = low ticket + high ticket + subscription</div>
-        <div class="question-desc">Cálculo de LTV por perfil de aluno. Margem real por aluno após custos operacionais.</div>
+        <div class="question-desc">Cálculo de LTV por perfil de aluno. Receita total considerando low ticket, high ticket e upsells. Margem real por aluno após custos operacionais.</div>
       </div>
       <div class="question-card">
         <div class="question-number">Questão 03</div>
         <div class="question-text">Quais campanhas produzem alunos que viram high-ticket customers?</div>
         <div class="question-formula">campaign → buyer → high ticket conversion</div>
-        <div class="question-desc">Rastreamento da jornada completa. Replicação do padrão das campanhas que geram melhor LTV.</div>
+        <div class="question-desc">Rastreamento da jornada completa: lead → aluno → cliente recorrente → high ticket. Replicação do padrão das campanhas que geram melhor LTV.</div>
       </div>
       <div class="question-card">
         <div class="question-number">Questão 04</div>
         <div class="question-text">Onde a receita está vazando no funil?</div>
         <div class="question-formula">lead → buyer / buyer → event / event → high ticket / purchase → refund</div>
-        <div class="question-desc">Identificação de gargalos e oportunidades de otimização em cada transição.</div>
+        <div class="question-desc">Análise de cada etapa do funil. Identificação de gargalos e oportunidades de otimização em cada transição.</div>
       </div>
       <div class="question-card">
         <div class="question-number">Questão 05</div>
         <div class="question-text">Quais funis geram o maior lucro por aluno?</div>
         <div class="question-formula">Revenue / Cost / Margin / Revenue per Buyer</div>
-        <div class="question-desc">Análise de rentabilidade por funil. Alocação de orçamento para funis que realmente geram lucro.</div>
+        <div class="question-desc">Análise de rentabilidade por funil (não só por receita). Alocação de orçamento para funis que realmente geram lucro.</div>
       </div>
     </div>
-
   </section>
 
   <!-- 03. COMO VAMOS RESPONDER -->
@@ -281,12 +285,13 @@
         <span class="phase-tag">Semanas 5+</span>
         <span class="phase-title">Fase 3: Implementação &amp; Otimização</span>
       </div>
+      <p>Com diagnóstico e recomendações claros, a implementação acontece de forma estruturada:</p>
       <ul>
         <li><strong>Testes A/B contínuos</strong> de copy, landing pages, segmentação e timing, com hipóteses claras e análise de resultados.</li>
         <li><strong>Testes constantes de criativos</strong> com campanhas evergreen rodando continuamente para alimentar aprendizados.</li>
         <li><strong>Mentoria da media buyer:</strong> Orientação estratégica contínua sobre o que testar, pausar e escalar com base em dados.</li>
         <li><strong>Validação e otimização de funis:</strong> A estratégia é definida pela Evolucionar.io, o time executa, e o resultado é revisado e otimizado continuamente.</li>
-        <li><strong>Análise de cohort:</strong> Rastreamento de qual "geração" de leads tem melhor LTV para replicar padrões vencedores.</li>
+        <li><strong>Análise de cohort:</strong> Rastreamento de qual "geração" de leads (por período/campanha) tem melhor LTV para replicar padrões vencedores.</li>
       </ul>
     </div>
 
@@ -385,7 +390,7 @@
   <section>
     <div class="section-number">05</div>
     <h2>Out of Scope</h2>
-    <p>As seguintes atividades não fazem parte do retainer estratégico principal e devem ser executadas pelo time interno ou contratadas como Add-ons:</p>
+    <p>As seguintes atividades <strong>não</strong> fazem parte do retainer estratégico principal e devem ser executadas pelo time interno ou contratadas como Add-ons:</p>
     <div class="oos-box">
       <div class="oos-title">Não está incluído:</div>
       <ul>
@@ -405,7 +410,7 @@
       <div class="impact-title">Financeiro</div>
       <ul>
         <li>Melhora de margem pela identificação de funis e ofertas que diluem receita</li>
-        <li>Aumento de receita por meio de otimização de conversão</li>
+        <li>Aumento de receita por meio da otimização de conversão</li>
         <li>Maior previsibilidade de faturamento</li>
         <li>Decisões de alocação de capital mais rápidas e confiantes</li>
       </ul>
@@ -439,12 +444,12 @@
     <h2>Add-ons</h2>
     <p>As frentes abaixo são estruturais ou operacionais e não fazem parte do retainer estratégico principal. Podem ser contratadas separadamente conforme a necessidade e o momento do negócio.</p>
 
+    <!-- ADD-ON 1 -->
     <div class="addon-card">
       <div class="addon-header">
         <div class="addon-title">ADD-ON 1: CRM &amp; Nutrição de Base</div>
         <div class="addon-badge">Retainer Mensal</div>
       </div>
-
       <div class="addon-problem">A base de 13.000 leads existe, mas não está sendo trabalhada de forma estruturada. Leads entram, não convertem e não são reativados. O resultado é uma base que cresce em volume, mas não em receita.</div>
       <div class="addon-section-label">O que entregamos</div>
       <ul>
@@ -474,13 +479,13 @@
       <div class="addon-result"><strong>Resultado esperado:</strong> Base de 13.000 leads trabalhada de forma estruturada e segmentada, gerando receita recorrente a partir de leads que hoje não convertem. O CRM deixa de ser um repositório passivo e passa a ser um canal ativo de receita — com fluxos automatizados, campanhas de reativação e um programa de indicação que transforma alunos em promotores da escola.</div>
     </div>
 
+    <!-- ADD-ON 2 -->
     <div class="addon-card">
       <div class="addon-header">
         <div class="addon-title">ADD-ON 2: Estruturação B2B</div>
         <div class="addon-badge">Por Projeto</div>
       </div>
-
-      <div class="addon-problem">O segmento B2B é mais rentável e escalável que o B2C, mas hoje não existe estrutura para acessá-lo. Cada tentativa de entrar no B2B sem estrutura resulta em esforço disperso e sem retorno.</div>
+      <div class="addon-problem">O segmento B2B é mais rentável e escalável que o B2C, mas hoje não existe estrutura para acessá-lo. Não há posicionamento, buyer personas, funis nem processo de prospecção. Cada tentativa de entrar no B2B sem estrutura resulta em esforço disperso e sem retorno.</div>
       <div class="addon-section-label">O que entregamos</div>
       <ul>
         <li>Estratégia de entrada no mercado B2B (posicionamento, proposta de valor, diferenciação)</li>
@@ -493,12 +498,12 @@
       <div class="addon-result"><strong>Resultado esperado:</strong> Pipeline B2B estruturado e operacional, com processo de prospecção replicável e SDRs capacitados para converter.</div>
     </div>
 
+    <!-- ADD-ON 3 -->
     <div class="addon-card">
       <div class="addon-header">
         <div class="addon-title">ADD-ON 3: Knowledge Base para AI</div>
         <div class="addon-badge">Por Projeto</div>
       </div>
-
       <div class="addon-problem">O conteúdo, os challenges e a metodologia da escola existem, mas não estão estruturados como produtos escaláveis. Há uma oportunidade clara de criar ferramentas de AI para alunos — inclusive para executivos dentro de empresas que não podem acessar ferramentas externas de AI — e de desenvolver produtos digitais que ampliem o alcance e a receita da escola.</div>
       <div class="addon-section-label">O que entregamos</div>
       <ul>
@@ -511,13 +516,13 @@
       <div class="addon-result"><strong>Resultado esperado:</strong> Novos produtos de AI que aumentam o valor percebido da escola, geram receita adicional e criam diferencial competitivo no mercado de ensino de inglês para executivos.</div>
     </div>
 
+    <!-- ADD-ON 4 -->
     <div class="addon-card">
       <div class="addon-header">
         <div class="addon-title">ADD-ON 4: Site SEO/AEO</div>
         <div class="addon-badge">Por Projeto</div>
       </div>
-
-      <div class="addon-problem">O orgânico está subaproveitado. Não há presença estruturada nos mecanismos de busca tradicionais (SEO) nem nos novos mecanismos de AI (AEO), que respondem perguntas diretamente. Isso significa oportunidades de captação de leads qualificados sendo deixadas na mesa todos os dias.</div>
+      <div class="addon-problem">O orgânico está subaproveitado. Não há presença estruturada nos mecanismos de busca tradicionais (SEO) nem nos novos mecanismos de AI (AEO — Artificial Engine Optimization), que respondem perguntas diretamente sem clicar em links. Isso significa oportunidades de captação de leads qualificados sendo deixadas na mesa todos os dias.</div>
       <div class="addon-section-label">O que entregamos</div>
       <ul>
         <li>Estratégia de palavras-chave e conteúdo orientada ao público executivo</li>
@@ -530,12 +535,12 @@
       <div class="addon-result"><strong>Resultado esperado:</strong> Presença orgânica e em AI search que gera captação de leads qualificados sem dependência exclusiva de tráfego pago — incluindo o novo canal de AI ads.</div>
     </div>
 
+    <!-- ADD-ON 5 -->
     <div class="addon-card">
       <div class="addon-header">
         <div class="addon-title">ADD-ON 5: Desenvolvimento de Novos Funis e Páginas</div>
         <div class="addon-badge">Por Projeto</div>
       </div>
-
       <div class="addon-problem">Quando surge a necessidade de criar um novo funil, página ou produto do zero, o time não tem capacidade ou referência para entregar no nível necessário. O resultado são páginas medianas que não convertem.</div>
       <div class="addon-section-label">O que entregamos</div>
       <ul>
@@ -552,6 +557,7 @@
   <section>
     <div class="section-number">08</div>
     <h2>Próximos Passos</h2>
+    <p class="steps-intro">A Evolucionar.io não executa marketing operacional. Executa decisões que fazem o marketing funcionar. O foco não está em fazer mais — mas em fazer melhor, com critério, velocidade e impacto real em receita.</p>
     <ol class="steps-list">
       <li><div class="step-num">1</div><div class="step-text">Aprovação da proposta (Semana 1)</div></li>
       <li><div class="step-num">2</div><div class="step-text">Assinatura de contrato (Semana 1)</div></li>
