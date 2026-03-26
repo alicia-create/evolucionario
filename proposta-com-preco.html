@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Proposta Comercial — Evolucionar.io × Ana Petrosino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  :root {
+    --primary: #1a1a2e;
+    --accent: #7c3aed;
+    --accent-light: #ede9fe;
+    --teal: #0d9488;
+    --teal-light: #ccfbf1;
+    --amber: #d97706;
+    --amber-light: #fef3c7;
+    --red-light: #fee2e2;
+    --green-light: #d1fae5;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-400: #9ca3af;
+    --gray-600: #4b5563;
+    --gray-800: #1f2937;
+    --white: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(--gray-800); line-height: 1.7; font-size: 15px; }
+
+  /* COVER */
+  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: var(--white); padding: 80px 60px; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; }
+  .cover-brand { font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #a78bfa; margin-bottom: 32px; }
+  .cover-title { font-size: 38px; font-weight: 800; line-height: 1.2; margin-bottom: 10px; }
+  .cover-subtitle { font-size: 18px; font-weight: 300; color: #c4b5fd; margin-bottom: 48px; }
+  .cover-meta { display: flex; gap: 40px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 28px; }
+  .cover-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .cover-meta-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #a78bfa; }
+  .cover-meta-value { font-size: 15px; font-weight: 500; }
+
+  /* LAYOUT */
+  .container { max-width: 860px; margin: 0 auto; padding: 60px 40px; }
+  section { margin-bottom: 64px; }
+
+  /* HEADINGS */
+  .section-number { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  h2 { font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 3px solid var(--accent-light); }
+  h3 { font-size: 17px; font-weight: 700; color: var(--primary); margin: 28px 0 10px; }
+  h4 { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin: 20px 0 8px; }
+  p { margin-bottom: 14px; color: var(--gray-600); }
+
+  /* QUESTIONS */
+  .questions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .question-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 22px 24px; position: relative; overflow: hidden; }
+  .question-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent), var(--teal)); }
+  .question-card.b2b::before { background: linear-gradient(90deg, var(--teal), #0891b2); }
+  .question-number { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .question-card.b2b .question-number { color: var(--teal); }
+  .question-text { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 8px; line-height: 1.4; }
+  .question-formula { font-size: 12px; color: var(--gray-400); font-family: 'Courier New', monospace; }
+  .question-desc { font-size: 13px; color: var(--gray-600); margin-top: 8px; }
+  .b2b-card-full { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 22px 24px; position: relative; overflow: hidden; margin-top: 16px; }
+  .b2b-card-full::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--teal), #0891b2); }
+
+  /* SECTION LABEL */
+  .subsection-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-400); margin: 28px 0 12px; }
+
+  /* PHASE BOXES */
+  .phase-box { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .phase-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .phase-tag { background: var(--accent-light); color: var(--accent); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+  .phase-title { font-size: 16px; font-weight: 700; color: var(--primary); }
+  .phase-box ul { margin: 0; padding-left: 20px; color: var(--gray-600); }
+  .phase-box li { margin-bottom: 6px; font-size: 14px; }
+  .phase-box p { font-size: 14px; margin-bottom: 10px; }
+
+  /* HIGHLIGHT */
+  .highlight-box { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 14px 0; font-size: 14px; color: var(--primary); }
+  .highlight-box strong { color: var(--accent); }
+
+  /* CADENCE TABLE */
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  th, td { padding: 13px 18px; text-align: left; border-bottom: 1px solid var(--gray-200); }
+  th { background: var(--gray-50); font-weight: 600; font-size: 12px; color: var(--gray-600); text-transform: uppercase; letter-spacing: 1px; }
+  td { font-size: 14px; }
+  tr:last-child td { border-bottom: none; }
+
+  .scope-note { background: var(--gray-100); border-radius: 10px; padding: 14px 18px; font-size: 13px; color: var(--gray-600); margin-top: 16px; }
+
+  /* PILLARS */
+  .pillar-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 22px 24px; margin-bottom: 14px; display: flex; gap: 18px; align-items: flex-start; }
+  .pillar-num { background: var(--accent-light); color: var(--accent); font-size: 15px; font-weight: 800; min-width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .pillar-content h3 { margin: 0 0 8px; font-size: 15px; }
+  .pillar-content ul { margin: 0; padding-left: 18px; color: var(--gray-600); font-size: 14px; }
+  .pillar-content li { margin-bottom: 4px; }
+
+  /* OUT OF SCOPE */
+  .oos-box { background: var(--red-light); border: 1px solid #fca5a5; border-radius: 12px; padding: 24px; margin: 20px 0; }
+  .oos-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #b91c1c; margin-bottom: 14px; }
+  .oos-box ul { list-style: none; padding: 0; margin: 0; }
+  .oos-box li { font-size: 14px; color: #991b1b; margin-bottom: 10px; padding-left: 24px; position: relative; }
+  .oos-box li::before { content: '✕'; position: absolute; left: 0; font-weight: 700; }
+
+  /* IMPACT */
+  .impact-box { border-radius: 12px; padding: 22px 26px; margin: 16px 0; }
+  .impact-box.financial { background: var(--teal-light); border-left: 4px solid var(--teal); }
+  .impact-box.strategic { background: var(--accent-light); border-left: 4px solid var(--accent); }
+  .impact-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+  .impact-box.financial .impact-title { color: var(--teal); }
+  .impact-box.strategic .impact-title { color: var(--accent); }
+  .impact-box ul { margin: 0; padding-left: 18px; color: var(--gray-600); font-size: 14px; }
+  .impact-box li { margin-bottom: 6px; }
+
+  /* ADD-ONS */
+  .addon-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 28px 32px; margin: 24px 0; position: relative; overflow: hidden; }
+  .addon-card::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(180deg, var(--accent), var(--teal)); }
+  .addon-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; flex-wrap: wrap; gap: 8px; }
+  .addon-title { font-size: 18px; font-weight: 700; color: var(--primary); }
+  .addon-badge { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; background: var(--accent-light); color: var(--accent); white-space: nowrap; }
+  .addon-price { font-size: 20px; font-weight: 800; color: var(--accent); margin: 8px 0 16px; }
+  .addon-price span { font-size: 13px; font-weight: 400; color: var(--gray-400); }
+  .addon-problem { font-size: 13px; color: var(--gray-600); margin-bottom: 14px; font-style: italic; border-left: 3px solid var(--gray-200); padding-left: 12px; }
+  .addon-section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-400); margin: 14px 0 8px; }
+  .addon-card ul { margin: 0; padding-left: 18px; color: var(--gray-600); font-size: 14px; }
+  .addon-card li { margin-bottom: 5px; }
+  .addon-result { background: var(--green-light); border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #065f46; margin-top: 14px; }
+  .addon-result strong { color: #047857; }
+
+  /* PRICING */
+  .pricing-card { background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); border-radius: 16px; padding: 40px; color: var(--white); margin: 24px 0; }
+  .pricing-row { display: flex; justify-content: space-between; align-items: center; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 15px; }
+  .pricing-row:last-child { border-bottom: none; }
+  .pricing-row.total { font-size: 20px; font-weight: 800; padding-top: 20px; color: #a78bfa; }
+  .pricing-row.separator { border-top: 1px dashed rgba(255,255,255,0.2); margin-top: 8px; padding-top: 20px; }
+  .pricing-label { color: rgba(255,255,255,0.75); }
+  .pricing-optional { font-size: 11px; color: rgba(255,255,255,0.4); margin-left: 6px; }
+  .pricing-value { font-weight: 700; }
+
+  /* NEXT STEPS */
+  .steps-list { list-style: none; padding: 0; margin: 20px 0; counter-reset: step; }
+  .steps-list li { counter-increment: step; display: flex; align-items: flex-start; gap: 16px; margin-bottom: 14px; }
+  .step-num { background: var(--accent); color: var(--white); font-size: 13px; font-weight: 700; min-width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-text { font-size: 14px; color: var(--gray-600); padding-top: 6px; }
+
+  /* TERMS */
+  .terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+  .terms-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 18px 20px; }
+  .terms-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
+  .terms-value { font-size: 14px; color: var(--gray-700); }
+
+  /* FOOTER */
+  .footer { background: var(--primary); color: rgba(255,255,255,0.5); text-align: center; padding: 32px; font-size: 12px; letter-spacing: 1px; }
+  .footer strong { color: var(--white); }
+
+  @media (max-width: 640px) {
+    .cover { padding: 48px 24px; }
+    .cover-title { font-size: 26px; }
+    .container { padding: 40px 20px; }
+    .questions-grid { grid-template-columns: 1fr; }
+    .terms-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-brand">Evolucionar.io</div>
+  <div>
+    <div class="cover-title">Consultoria em Growth,<br>CRO e Estruturação B2B</div>
+    <div class="cover-subtitle">Proposta Comercial</div>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Cliente</span>
+      <span class="cover-meta-value">Ana Petrosino</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Empresa</span>
+      <span class="cover-meta-value">Grupo Embassy / Petrosino</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Data</span>
+      <span class="cover-meta-value">Março de 2026</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Período</span>
+      <span class="cover-meta-value">Contrato Contínuo · 30 dias de aviso</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 01. SITUAÇÃO ATUAL -->
+  <section>
+    <div class="section-number">01</div>
+    <h2>Situação Atual</h2>
+    <p>O negócio da Ana Petrosino opera em dois modelos distintos. No <strong>B2C</strong>, executivos compram aulas individuais de inglês conforme sua urgência — 1, 2 ou 3 aulas por semana. A base atual conta com 13.000 leads, com meta de 60 leads/dia, mas capturando apenas 34 (57% do alvo). O faturamento anual chegou a R$ 4,5M, porém com margem muito reduzida, o que indica que o problema não é de volume, mas de <strong>rentabilidade</strong>.</p>
+    <p>No <strong>B2B</strong>, há uma oportunidade ainda não estruturada: empresas que precisam treinar seus funcionários em inglês para atuar em contextos internacionais. Este segmento tem dinâmica, funis e decisores completamente diferentes do B2C e será tratado como um projeto separado.</p>
+    <p>A infraestrutura atual conta com CRM (Data Crazy), Email Marketing (Active Campaign), análise de faturamento (Guru) e um time de marketing com designer, editor, media buyer e gerente de projetos.</p>
+  </section>
+
+  <!-- 02. QUESTÕES ESTRATÉGICAS -->
+  <section>
+    <div class="section-number">02</div>
+    <h2>Questões Estratégicas que Vamos Responder</h2>
+    <p>Toda análise, recomendação, teste e ação estará orientada a responder as seguintes questões de negócio. Não existe decisão de marketing que não passe por uma dessas perguntas.</p>
+
+    <div class="subsection-label">B2C — Otimização dos Funis Existentes</div>
+    <div class="questions-grid">
+      <div class="question-card">
+        <div class="question-number">Questão 01</div>
+        <div class="question-text">O que realmente custa adquirir um aluno?</div>
+        <div class="question-formula">Cost per Buyer = Ad Spend / Buyers</div>
+        <div class="question-desc">Análise de CPL real por canal, campanha e segmento. Identificar quais funis e campanhas queimam orçamento e quais são eficientes.</div>
+      </div>
+      <div class="question-card">
+        <div class="question-number">Questão 02</div>
+        <div class="question-text">Qual é o verdadeiro valor de um aluno?</div>
+        <div class="question-formula">Buyer Value = low ticket + high ticket + subscription</div>
+        <div class="question-desc">Cálculo de LTV por perfil de aluno. Margem real por aluno após custos operacionais.</div>
+      </div>
+      <div class="question-card">
+        <div class="question-number">Questão 03</div>
+        <div class="question-text">Quais campanhas produzem alunos que viram high-ticket customers?</div>
+        <div class="question-formula">campaign → buyer → high ticket conversion</div>
+        <div class="question-desc">Rastreamento da jornada completa. Replicação do padrão das campanhas que geram melhor LTV.</div>
+      </div>
+      <div class="question-card">
+        <div class="question-number">Questão 04</div>
+        <div class="question-text">Onde a receita está vazando no funil?</div>
+        <div class="question-formula">lead → buyer / buyer → event / event → high ticket / purchase → refund</div>
+        <div class="question-desc">Identificação de gargalos e oportunidades de otimização em cada transição.</div>
+      </div>
+      <div class="question-card">
+        <div class="question-number">Questão 05</div>
+        <div class="question-text">Quais funis geram o maior lucro por aluno?</div>
+        <div class="question-formula">Revenue / Cost / Margin / Revenue per Buyer</div>
+        <div class="question-desc">Análise de rentabilidade por funil. Alocação de orçamento para funis que realmente geram lucro.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 03. COMO VAMOS RESPONDER -->
+  <section>
+    <div class="section-number">03</div>
+    <h2>Como Vamos Responder</h2>
+    <p>A atuação da Evolucionar.io é dividida em fases claras, focadas em organizar a casa, analisar dados e implementar otimizações contínuas.</p>
+
+    <div class="phase-box">
+      <div class="phase-header">
+        <span class="phase-tag">Semanas 1–2</span>
+        <span class="phase-title">Fase 1: Diagnóstico &amp; Estruturação</span>
+      </div>
+      <p>O ponto de partida é organizar os dados antes de qualquer decisão. Isso inclui auditoria completa da infraestrutura (CRM, Active Campaign, Guru), definição de KPIs estratégicos por funil e estruturação das automações de relatórios.</p>
+      <div class="highlight-box"><strong>Entrega Imediata:</strong> Automação de Relatório Diário via WhatsApp ou Slack — toda manhã, o time recebe automaticamente os principais números do dia anterior (adspend, leads, closes e conversão), eliminando a necessidade de acessar múltiplas ferramentas.</div>
+    </div>
+
+    <div class="phase-box">
+      <div class="phase-header">
+        <span class="phase-tag">Semanas 3–4</span>
+        <span class="phase-title">Fase 2: Análise &amp; Recomendações</span>
+      </div>
+      <p>Com os dados organizados, a análise profunda começa com ferramentas proprietárias da Evolucionar.io:</p>
+      <ul>
+        <li><strong>Deep Sentiment Analyzer:</strong> Análise emocional de chat threads dos eventos ao vivo para identificar sentimentos, necessidades ocultas e padrões de comportamento que informam copy e abordagem de vendas.</li>
+        <li><strong>Event Transcription Analyzer:</strong> Análise de transcrições dos eventos ao vivo e calls para extrair insights estratégicos sobre o conteúdo, alinhamento do funil, tratamento de objeções e oportunidades.</li>
+      </ul>
+      <p style="margin-top:12px;">Essas ferramentas alimentam diretamente o banco de conhecimento da escola — base para os AI agents que auxiliam o time na geração de copy e conteúdo com mais precisão.</p>
+      <p>Também será disponibilizado para a equipe:</p>
+      <ul>
+        <li><strong>Prompts de conteúdo viral:</strong> Série de prompts baseados em conteúdos virais para a equipe de conteúdo.</li>
+        <li><strong>Biblioteca de prompts para Claude:</strong> Angle, Hook &amp; Video Ad Script Generator — aumenta a velocidade e qualidade de produção de anúncios do time.</li>
+      </ul>
+      <div class="highlight-box" style="margin-top:16px;"><strong>Entrega da Fase 2:</strong> Análise completa dos números com identificação de gaps de conversão, roadmap de testes prioritários e dashboard de performance estruturado — base para todas as decisões da Fase 3.</div>
+    </div>
+
+    <div class="phase-box">
+      <div class="phase-header">
+        <span class="phase-tag">Semanas 5+</span>
+        <span class="phase-title">Fase 3: Implementação &amp; Otimização</span>
+      </div>
+      <ul>
+        <li><strong>Testes A/B contínuos</strong> de copy, landing pages, segmentação e timing, com hipóteses claras e análise de resultados.</li>
+        <li><strong>Testes constantes de criativos</strong> com campanhas evergreen rodando continuamente para alimentar aprendizados.</li>
+        <li><strong>Mentoria da media buyer:</strong> Orientação estratégica contínua sobre o que testar, pausar e escalar com base em dados.</li>
+        <li><strong>Validação e otimização de funis:</strong> A estratégia é definida pela Evolucionar.io, o time executa, e o resultado é revisado e otimizado continuamente.</li>
+        <li><strong>Análise de cohort:</strong> Rastreamento de qual "geração" de leads tem melhor LTV para replicar padrões vencedores.</li>
+      </ul>
+    </div>
+
+    <h4>Cadência de Trabalho</h4>
+    <table>
+      <thead><tr><th>Atividade</th><th>Frequência</th></tr></thead>
+      <tbody>
+        <tr><td>Análise de dados</td><td>2x/semana</td></tr>
+        <tr><td>Reunião estratégica com stakeholders-chave</td><td>1x/semana (30–45 min)</td></tr>
+        <tr><td>Mentoria para o media buyer</td><td>Contínua (assíncrona)</td></tr>
+        <tr><td>Testes de criativos e copy</td><td>Contínuo</td></tr>
+        <tr><td>Relatório de performance</td><td>1x/mês</td></tr>
+      </tbody>
+    </table>
+    <div class="scope-note"><strong>Escopo:</strong> 10–15h semanais. As primeiras 4 semanas podem demandar até 20h para estruturação inicial. Reuniões operacionais com time de tráfego, comercial e projetos são escopo do Add-on de CRM.</div>
+  </section>
+
+  <!-- 04. OS 6 PILARES -->
+  <section>
+    <div class="section-number">04</div>
+    <h2>Os 6 Pilares de Entrega</h2>
+    <p>Para garantir que as fases acima sejam executadas com excelência, a Evolucionar.io atua em nível sênior, direcionando o time existente através de 6 pilares fundamentais:</p>
+
+    <div class="pillar-item">
+      <div class="pillar-num">1</div>
+      <div class="pillar-content">
+        <h3>Direção Estratégica de Growth</h3>
+        <ul>
+          <li>Definição das prioridades semanais de crescimento</li>
+          <li>Identificação de gargalos nos funis</li>
+          <li>Planejamento de testes com maior potencial de impacto</li>
+          <li>Proposta de novas ofertas, produtos e planejamento de novos funis</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pillar-item">
+      <div class="pillar-num">2</div>
+      <div class="pillar-content">
+        <h3>Arquitetura e Otimização de Funis</h3>
+        <ul>
+          <li>Estruturação estratégica dos funis</li>
+          <li>Revisão contínua das etapas e lógica de conversão</li>
+          <li>Ajustes para melhorar rentabilidade e payback</li>
+          <li>Criação de calendário anual de conversão integrando funis, CRM e orgânico</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pillar-item">
+      <div class="pillar-num">3</div>
+      <div class="pillar-content">
+        <h3>Supervisão de Execução</h3>
+        <ul>
+          <li>Revisão de páginas, campanhas, e-mails e fluxos antes de irem ao ar</li>
+          <li>Feedback direto e acionável para o time</li>
+          <li>Revisão crítica e elevação (up-level) de copy existente</li>
+          <li>Ajustes estratégicos de mensagem em páginas e anúncios</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pillar-item">
+      <div class="pillar-num">4</div>
+      <div class="pillar-content">
+        <h3>Direcionamento de Testes</h3>
+        <ul>
+          <li>Definição clara de hipóteses</li>
+          <li>Estabelecimento de critérios de sucesso</li>
+          <li>Definição de próximos passos baseados nos resultados</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pillar-item">
+      <div class="pillar-num">5</div>
+      <div class="pillar-content">
+        <h3>Gestão de Performance (Visão de Negócio)</h3>
+        <ul>
+          <li>Análise de faturamento e rentabilidade (automatizada via API no dashboard)</li>
+          <li>Leitura de CAC, LTV, payback</li>
+          <li>Diagnóstico de canais e campanhas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pillar-item">
+      <div class="pillar-num">6</div>
+      <div class="pillar-content">
+        <h3>Ritmo e Governança</h3>
+        <ul>
+          <li>Condução de reunião semanal (curta e objetiva)</li>
+          <li>Apresentação de indicadores na reunião de radar</li>
+          <li>Definição de plano semanal e acompanhamento de execução</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. OUT OF SCOPE -->
+  <section>
+    <div class="section-number">05</div>
+    <h2>Out of Scope</h2>
+    <p>As seguintes atividades não fazem parte do retainer estratégico principal e devem ser executadas pelo time interno ou contratadas como Add-ons:</p>
+    <div class="oos-box">
+      <div class="oos-title">Não está incluído:</div>
+      <ul>
+        <li>Criação de landing pages, design ou escrita de copy do zero para páginas inteiras</li>
+        <li>Subir campanhas no Meta/Google, configurar integrações técnicas ou montar fluxos no CRM</li>
+        <li>Gestão de emails, social media ou postagens orgânicas</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 06. IMPACTO -->
+  <section>
+    <div class="section-number">06</div>
+    <h2>Impacto Esperado</h2>
+
+    <div class="impact-box financial">
+      <div class="impact-title">Financeiro</div>
+      <ul>
+        <li>Melhora de margem pela identificação de funis e ofertas que diluem receita</li>
+        <li>Aumento de receita através de otimização de conversão</li>
+        <li>Maior previsibilidade de faturamento</li>
+        <li>Decisões de alocação de capital mais rápidas e confiantes</li>
+      </ul>
+    </div>
+
+    <div class="impact-box strategic">
+      <div class="impact-title">Estratégico</div>
+      <ul>
+        <li>Capital alocado nos funis que realmente geram lucro</li>
+        <li>Planejamento de lançamentos previsível em vez de reativo</li>
+        <li>Decisões de growth tomadas com confiança em vez de hesitação</li>
+      </ul>
+    </div>
+
+    <h4>Operacional</h4>
+    <table>
+      <thead><tr><th>Situação Atual</th><th>Com a Evolucionar.io</th></tr></thead>
+      <tbody>
+        <tr><td>Números do dia acessados manualmente em múltiplas ferramentas</td><td>Relatório automático entregue toda manhã via WhatsApp ou Slack</td></tr>
+        <tr><td>Decisões de tráfego baseadas em feeling</td><td>Decisões baseadas em dados com mentoria estratégica contínua</td></tr>
+        <tr><td>Testes ocasionais sem metodologia clara</td><td>Testes planejados com hipóteses, execução e análise de resultados</td></tr>
+        <tr><td>Funis avaliados por receita bruta</td><td>Funis avaliados por rentabilidade real (receita / custo / margem)</td></tr>
+        <tr><td>Questões estratégicas respondidas em dias</td><td>Questões estratégicas respondidas em horas</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 07. ADD-ONS -->
+  <section>
+    <div class="section-number">07</div>
+    <h2>Add-ons</h2>
+    <p>As frentes abaixo são estruturais ou operacionais e não fazem parte do retainer estratégico principal. Podem ser contratadas separadamente conforme a necessidade e o momento do negócio.</p>
+
+    <div class="addon-card">
+      <div class="addon-header">
+        <div class="addon-title">ADD-ON 1: CRM &amp; Nutrição de Base</div>
+        <div class="addon-badge">Retainer Mensal</div>
+      </div>
+      <div class="addon-price">R$ 8.000<span>/mês · 30h mensais</span></div>
+      <div class="addon-problem">A base de 13.000 leads existe, mas não está sendo trabalhada de forma estruturada. Leads entram, não convertem e não são reativados. O resultado é uma base que cresce em volume mas não em receita.</div>
+      <div class="addon-section-label">O que entregamos</div>
+      <ul>
+        <li>Desenvolvimento de fluxos de comunicação automatizados para leads, trials e clientes ativos</li>
+        <li>Segmentação avançada da base (por urgência, cargo, faixa salarial, comportamento)</li>
+        <li>Criação e otimização de campanhas de nutrição e reativação</li>
+        <li>Copywriting e testes A/B de mensagens</li>
+        <li>Gestão e otimização do programa de indicação "Convide e Ganhe" (MGM)</li>
+        <li>Gestão de disparos de email e automações no Active Campaign</li>
+        <li>Alinhamento com times de CS, Vendas e TI</li>
+        <li>Reuniões operacionais com time de tráfego, comercial e projetos</li>
+        <li>Análise de KPIs e otimização contínua</li>
+      </ul>
+      <div class="addon-section-label">Resultado esperado</div>
+      <table>
+        <thead><tr><th>KPI</th><th>Objetivo</th></tr></thead>
+        <tbody>
+          <tr><td>Taxa de conversão lead → aluno</td><td>Aumentar</td></tr>
+          <tr><td>Taxa de upsell e cross-sell</td><td>Aumentar</td></tr>
+          <tr><td>Taxa de retenção de alunos</td><td>Aumentar</td></tr>
+          <tr><td>LTV por segmento</td><td>Aumentar</td></tr>
+          <tr><td>ROI do programa MGM</td><td>Medir e otimizar</td></tr>
+          <tr><td>Open rate de email</td><td>&gt; 25%</td></tr>
+          <tr><td>Click rate de email</td><td>&gt; 2%</td></tr>
+        </tbody>
+      </table>
+      <div class="addon-result"><strong>Resultado esperado:</strong> Base de 13.000 leads trabalhada de forma estruturada e segmentada, gerando receita recorrente a partir de leads que hoje não convertem. O CRM deixa de ser um repositório passivo e passa a ser um canal ativo de receita — com fluxos automatizados, campanhas de reativação e um programa de indicação que transforma alunos em promotores da escola.</div>
+    </div>
+
+    <div class="addon-card">
+      <div class="addon-header">
+        <div class="addon-title">ADD-ON 2: Estruturação B2B</div>
+        <div class="addon-badge">Por Projeto</div>
+      </div>
+      <div class="addon-price">R$ 10.000<span> · Implementação de 30 dias</span></div>
+      <div class="addon-problem">O segmento B2B é mais rentável e escalável que o B2C, mas hoje não existe estrutura para acessá-lo. Cada tentativa de entrar no B2B sem estrutura resulta em esforço disperso e sem retorno.</div>
+      <div class="addon-section-label">O que entregamos</div>
+      <ul>
+        <li>Estratégia de entrada no mercado B2B (posicionamento, proposta de valor, diferenciação)</li>
+        <li>Definição de buyer personas (tipos de empresas, departamentos, decisores e influenciadores)</li>
+        <li>Configuração e integração do Apollo.io para prospecção outbound estruturada</li>
+        <li>Treinamento dos SDRs para análise de perfil e criação de rapport inteligente via LinkedIn (mensagens personalizadas, não genéricas)</li>
+        <li>Playbooks de abordagem e documentação de processos</li>
+        <li>Definição da questão estratégica central do B2B: <em>Como estruturamos o B2B como novo revenue stream?</em> — com posicionamento, buyer personas, funis e ferramentas completamente separados do B2C</li>
+      </ul>
+      <div class="addon-result"><strong>Resultado esperado:</strong> Pipeline B2B estruturado e operacional, com processo de prospecção replicável e SDRs capacitados para converter.</div>
+    </div>
+
+    <div class="addon-card">
+      <div class="addon-header">
+        <div class="addon-title">ADD-ON 3: Knowledge Base para AI</div>
+        <div class="addon-badge">Por Projeto</div>
+      </div>
+      <div class="addon-price">Sob demanda</div>
+      <div class="addon-problem">O conteúdo, os challenges e a metodologia da escola existem, mas não estão estruturados como produtos escaláveis. Há uma oportunidade clara de criar ferramentas de AI para alunos — inclusive para executivos dentro de empresas que não podem acessar ferramentas externas de AI — e de desenvolver produtos digitais que ampliem o alcance e a receita da escola.</div>
+      <div class="addon-section-label">O que entregamos</div>
+      <ul>
+        <li>Estruturação do conteúdo da escola em base de conhecimento para AI agents</li>
+        <li>Desenvolvimento de agentes de AI para alunos: criação de apresentações, relatórios, e-mails e reuniões em inglês</li>
+        <li>Agentes específicos para alunos dentro de empresas com restrição de acesso a AI externas</li>
+        <li>Ferramentas para acelerar o aprendizado de inglês no contexto profissional</li>
+        <li>Estruturação de novos produtos digitais escaláveis a partir do conteúdo existente</li>
+      </ul>
+      <div class="addon-result"><strong>Resultado esperado:</strong> Novos produtos de AI que aumentam o valor percebido da escola, geram receita adicional e criam diferencial competitivo no mercado de ensino de inglês para executivos.</div>
+    </div>
+
+    <div class="addon-card">
+      <div class="addon-header">
+        <div class="addon-title">ADD-ON 4: Site SEO/AEO</div>
+        <div class="addon-badge">Por Projeto</div>
+      </div>
+      <div class="addon-price">Sob demanda</div>
+      <div class="addon-problem">O orgânico está subaproveitado. Não há presença estruturada nos mecanismos de busca tradicionais (SEO) nem nos novos mecanismos de AI (AEO), que respondem perguntas diretamente. Isso significa oportunidades de captação de leads qualificados sendo deixadas na mesa todos os dias.</div>
+      <div class="addon-section-label">O que entregamos</div>
+      <ul>
+        <li>Estratégia de palavras-chave e conteúdo orientada ao público executivo</li>
+        <li>Desenvolvimento de site responsivo otimizado para SEO e AEO</li>
+        <li>Estruturação de conteúdo para aparecer em respostas de AI (ChatGPT, Perplexity, Google AI Overview)</li>
+        <li>Preparação de estrutura e conteúdo para anúncios no ChatGPT</li>
+        <li>Posicionamento estratégico para aparecer quando executivos perguntam a AI: <em>"Qual é a melhor escola de inglês para executivos?"</em></li>
+        <li>Integração com CRM e tracking</li>
+      </ul>
+      <div class="addon-result"><strong>Resultado esperado:</strong> Presença orgânica e em AI search que gera captação de leads qualificados sem dependência exclusiva de tráfego pago — incluindo o novo canal de AI ads.</div>
+    </div>
+
+    <div class="addon-card">
+      <div class="addon-header">
+        <div class="addon-title">ADD-ON 5: Desenvolvimento de Novos Funis e Páginas</div>
+        <div class="addon-badge">Por Projeto</div>
+      </div>
+      <div class="addon-price">Sob demanda</div>
+      <div class="addon-problem">Quando surge a necessidade de criar um novo funil, página ou produto do zero, o time não tem capacidade ou referência para entregar no nível necessário. O resultado são páginas medianas que não convertem.</div>
+      <div class="addon-section-label">O que entregamos</div>
+      <ul>
+        <li>Desenvolvimento de páginas de captura e venda</li>
+        <li>Construção técnica de novos funis</li>
+        <li>Escrita de copy do zero para páginas inteiras</li>
+        <li>Desenvolvimento de produtos digitais (CustomGPT, ebooks, ferramentas de AI, etc.)</li>
+      </ul>
+      <div class="addon-result"><strong>Resultado esperado:</strong> Funis e páginas com copy e estrutura de conversão de nível sênior, prontos para escalar.</div>
+    </div>
+  </section>
+
+  <!-- 08. PRÓXIMOS PASSOS -->
+  <section>
+    <div class="section-number">08</div>
+    <h2>Próximos Passos</h2>
+    <ol class="steps-list">
+      <li><div class="step-num">1</div><div class="step-text">Aprovação da proposta (Semana 1)</div></li>
+      <li><div class="step-num">2</div><div class="step-text">Assinatura de contrato (Semana 1)</div></li>
+      <li><div class="step-num">3</div><div class="step-text">Kick-off: início da Fase 1 — diagnóstico, estruturação de dados e automações (Semana 2)</div></li>
+      <li><div class="step-num">4</div><div class="step-text">Apresentação de diagnóstico, gaps identificados e roadmap de testes (Semanas 3–4)</div></li>
+      <li><div class="step-num">5</div><div class="step-text">Início da Fase 3: implementação e otimização contínua (Semana 5+)</div></li>
+    </ol>
+  </section>
+
+  <!-- 09. TERMOS -->
+  <section>
+    <div class="section-number">09</div>
+    <h2>Termos &amp; Condições</h2>
+    <div class="terms-grid">
+      <div class="terms-item">
+        <div class="terms-label">Duração</div>
+        <div class="terms-value">Contrato contínuo com 30 dias de aviso prévio para rescisão por ambas as partes.</div>
+      </div>
+      <div class="terms-item">
+        <div class="terms-label">Pagamento</div>
+        <div class="terms-value">R$ 12.000/mês (Proposta Principal) + Add-ons conforme contratação.</div>
+      </div>
+      <div class="terms-item">
+        <div class="terms-label">Início</div>
+        <div class="terms-value">[DATA A DEFINIR]</div>
+      </div>
+      <div class="terms-item">
+        <div class="terms-label">Responsabilidades do Cliente</div>
+        <div class="terms-value">Acesso a dados e ferramentas necessárias, implementação de recomendações, feedback e alinhamento em reuniões.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. RESUMO FINANCEIRO -->
+  <section>
+    <div class="section-number">10</div>
+    <h2>Resumo Financeiro</h2>
+    <div class="pricing-card">
+      <div class="pricing-row">
+        <span class="pricing-label">Consultoria Estratégica em Growth &amp; CRO</span>
+        <span class="pricing-value">R$ 12.000/mês</span>
+      </div>
+      <div class="pricing-row">
+        <span class="pricing-label">CRM &amp; Nutrição de Base <span class="pricing-optional">(opcional)</span></span>
+        <span class="pricing-value">R$ 8.000/mês</span>
+      </div>
+      <div class="pricing-row total">
+        <span>Total Mensal (com CRM)</span>
+        <span>R$ 20.000/mês</span>
+      </div>
+      <div class="pricing-row separator">
+        <span class="pricing-label">Estruturação B2B <span class="pricing-optional">(por projeto)</span></span>
+        <span class="pricing-value">R$ 10.000</span>
+      </div>
+      <div class="pricing-row">
+        <span class="pricing-label">Knowledge Base para AI / Site SEO/AEO / Novos Funis</span>
+        <span class="pricing-value">Sob demanda</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  <strong>Evolucionar.io</strong> &nbsp;·&nbsp; Alícia Félix &nbsp;·&nbsp; info@evolucionar.io<br><br>
+  Esta proposta é válida por 30 dias a partir da data de emissão.
+</div>
+
+</body>
+</html>
